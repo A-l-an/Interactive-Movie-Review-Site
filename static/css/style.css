@@ -1,0 +1,382 @@
+ @font-face {
+    font-family: 'FontAwesome';
+     src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+     src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+     font-weight: normal;
+     font-style: normal;
+   }
+
+.icon{
+   font-family: FontAwesome;
+   font-size: 20px;
+}
+
+* {
+    margin:  0;
+    padding: 0;
+}
+/* 版心 */
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table;
+  }
+  .clearfix:after {
+    clear:both;
+  }
+  .clearfix {
+     *zoom:1;
+  }
+
+body {
+    background-color: black;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    height: 20px;
+    margin: 15px auto;
+    margin-bottom: 20px;
+}
+
+.logo {
+    float: left;
+    padding-right: 70px;
+}
+
+.nav ul li a {
+    display: block;
+    color: white;
+    height: 30px;
+    padding: 0 10px;
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.nav ul li {
+    float: left;
+    margin: 0 10px;
+}
+
+.nav ul li a:hover {
+    color: #eec548;
+}
+
+.header .search {
+    float: left;
+    margin-left: 197px;
+    height: 30px;
+    width: 503px;
+    background-color: white;
+    border-radius: 5px;
+}
+/* input 由于有边框，宽度-2px */
+.search input {
+    float: left;
+    padding-left: 20px;
+    height: 30px;
+    width: 450px;
+    border: 1px solid gray;
+    border-right: none;
+    color: black;
+    font-size: 14px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+/* 行内块元素之间会有空隙，因此需要把文本框和搜索按钮一起变成浮动 */
+.search .button {
+    float: left;
+    padding-left: 0px;
+    height: 32px;
+    width: 32px;
+    /* 按钮默认有边框 */
+    /*border: 0;*/
+    border: 0;
+    border-radius: 0px 5px 5px 0px;
+    color: white;
+    /*background: url(images/bgs.png);*/
+}
+
+.user {
+    float: right;
+    line-height: 30px;
+    margin-right: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+.banner {
+    height: 421px;
+    background-color: #1c036c;
+}
+
+/* 浮动的盒子不会有外边距的合并问题 */
+
+.banner .w {
+    /* 仍然要设置高度 */
+    height: 421px;
+    background: url(images/banner2.png) no-repeat top center;
+}
+
+.banner .w .subnav {
+    float: left;
+    width: 190px;
+    height: 421px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.banner .w .subnav ul li {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 20px;
+}
+
+.banner .w .subnav ul li a {
+    color: #fff;
+    font-size: 14px;
+}
+
+.subnav ul li span {
+    float: right;
+    /* color: #fff; */
+    /* 有他反而不会随链接一起变色 */
+}
+
+.banner .w .subnav ul li a:hover {
+    color: #00a4ff;
+}
+
+.banner .w .subnav ul .firstline {
+    padding-top: 5px;
+}
+
+.course {
+    float: right;
+    width: 230px;
+    height: 300px;
+    margin-top: 50px;
+    background-color: white;
+}
+
+.course h2 {
+    height: 48px;
+    background-color: #9bceea;
+    line-height: 48px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+
+.course .body {
+    padding: 0 20px;
+}
+
+.course .body ul li {
+    padding: 14px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.course .body ul li h4 {
+    color: #4e4e4e;
+    font-size: 14px;
+}
+
+.course .body ul li p {
+    color: #a5a5a5;
+    font-size: 12px;
+}
+
+.course .body .more {
+    display: block;
+    /* 加了边框高度需要改变 */
+    height: 38px;
+    border: 1px solid #22b0ff;
+    margin-top: 5px;
+    line-height: 38px;
+    text-align: center;
+    color: #00a4ff;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.goods {
+    height: 60px;
+    margin-top: 5px;
+    background-color: white;
+    box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
+    /* 行高会继承， 会继承给3个孩子 */
+    line-height: 60px;
+}
+
+/* 另一种方法 */
+/* .goods h3 {
+    float: left;
+    margin-left: 30px;
+    font-size: 16px;
+    color: #00a4ff;
+}
+.goods ul {
+    float: left;
+    margin-left: 30px;
+} */
+
+.goods h3 {
+    float: left;
+    width: 132px;
+    text-align: center;
+    /* margin: 20px 0; */
+    font-size: 16px;
+    color: #00a4ff;
+    font-weight: 400;
+}
+
+.goods ul li {
+    float: left;
+}
+
+/* 把li与a分开可以实现段竖线和文字大小一致 */
+.goods ul li a {
+    padding: 0 35px;
+    border-left: 1px solid #bfbfbf;
+    font-size: 16px;
+    color: black;
+}
+
+.mod {
+    float: right;
+    margin-right: 15px;
+    font-size: 14px;
+    color: #00a4ff;
+}
+
+.box {
+    margin-top: 33px;
+}
+
+.box-hd {
+    height: 20px;
+    margin-bottom: 22px;
+}
+
+.box-hd h3 {
+    float: left;
+    color: #494949;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.box-hd a {
+    float: right;
+    padding: 8px 30px 0 0;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+/* 小技巧 */
+/* 把li 的父亲ul 修改的足够宽一行能装开5个盒子就不会换行了 */
+.box-bd ul {
+    width: 1225px;
+}
+
+.box-bd ul li {
+    position: relative;
+    float: left;
+    margin: 0 15px 15px 0;
+    height: 270px;
+    width: 230px;
+    background-color: #fff;
+}
+/* 像素大小不匹配的时候的做法 */
+/* 亲儿子标签 */
+.box-bd ul li > img {
+    width: 100%;
+}
+
+.box-bd ul li em {
+    position: absolute;
+    top: 4px;
+    right: -4px;
+}
+
+.box-bd ul li h3 {
+    margin: 20px 20px 15px 25px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.box-bd ul li .info {
+    margin: 0 20px 0 25px;
+    font-size: 12px;
+    color: #999;
+}
+
+.box-bd ul li span {
+    color: #ff7c2d;
+    padding-right: 5px;
+}
+
+.fooster {
+    height: 420px;
+    background-color: #fff;
+}
+
+.fooster .w {
+    margin-top: 35px;
+}
+
+.fooster .w .copyright {
+    float: left;
+    margin: 33px 0 0 20px;
+}
+
+.fooster .w .copyright p {
+    margin-top: 23px;
+    margin-bottom: 17px;
+    font-size: 12px;
+}
+
+.copyright a {
+    display: block;
+    width: 118px;
+    height: 33px;
+    border: 1px solid #22b0ff;
+    line-height: 33px;
+    text-align: center;
+    font-size: 16px;
+    color: #22b0ff;
+}
+
+.links {
+    float: right;
+    margin-right: 32px;
+    margin-top: 23px;
+}
+
+.links dl {
+    float: right;
+    margin-left: 120px;
+}
+
+.links dl dt {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+}
+
+.links dl dd a{
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 12px;
+}

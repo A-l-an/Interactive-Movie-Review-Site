@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDB都不理</title>
+    <link rel="stylesheet" href="../static/css/film.css">
+</head>
+<body>
+    {% include 'base.html' %}
+    <div class="mainbody">
+        <h1 class="title w">
+        Hello {{ film_name_en }}!
+        </h1>
+        {{ film_name_en }}
+        {{ film_imdb }}
+        <img src="../static/images/La%20La%20Land.JPG" alt="" class="poster">
+    </div>
+</body>

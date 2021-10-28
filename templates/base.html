@@ -1,18 +1,42 @@
-{% extends "bootstrap/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}Meals Recommend{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDB都不理</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
 
-{% include "nav.html" %}
-
-{% block content %}
-<div class="container">
-
-    {% for message in get_flashed_messages() %}
-        <div class="alert alert-primary" role="alert">
-            {{ message }}
+<body>
+    <div class="header w">
+        <div class="logo">
+            <img src="images/logo.png" alt="">
         </div>
-    {% endfor %}
 
-    {% block page_content %}{% endblock %}
-</div>
-{% endblock %}
+        <div class="nav">
+            <ul>
+                {% if user_name %}
+                {% else %}
+                    <li><a href="/login">Sign in</a></li>
+                {% endif %}
+
+            </ul>
+        </div>
+
+        <div class="search">
+            <form method="post">
+                <input value="" name="search_film">
+                <input type="submit" class="icon button" value="&#xf002">
+            </form>
+        </div>
+
+        <div class="user">
+            <img src="images/user.png" alt="">
+            {{ user_name }}
+        </div>
+    </div>
+    {% block base %}
+    {% endblock %}
+</body>

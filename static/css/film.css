@@ -1,0 +1,45 @@
+* {
+    margin:  0;
+    padding: 0;
+}
+/* 版心 */
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table;
+  }
+  .clearfix:after {
+    clear:both;
+  }
+  .clearfix {
+     *zoom:1;
+  }
+
+body {
+    background-color: #181818;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.poster {
+    height: 420px;
+}
+
+.title {
+    color: white;
+}
+
+.mainbody {
+    height: 2000px;
+    background-color: #181818;
+}
