@@ -36,7 +36,7 @@ def get_login():
 
                 if request.form['password'] == pw[0][0]:
                     # if request.form['password'] == pw:
-                    # return render_template('index.html', user_name=user_name)
+                    return render_template('index.html', user_name=user_name)
                     # return url_for('index')
                 return '<h>账号密码错误！</h>'
         cursor.close()
@@ -153,20 +153,20 @@ def get_likes():
 
 # 还没做完
 def get_user():
-    author=request.form['user_id']
-    cursor.execute('select user_name from film.user')
-    user_names = cursor.fetchall()
-
-    for user in user_names:
-        if request.form['user_name'] == user[0]:
-            sql_pw = 'select user_password from film.user where user_name' + '=' + '%s'
-            cursor.execute(sql_pw, (user[0]))
-
-            pw = cursor.fetchall()
-
-            if request.form['password'] == pw[0][0]:
-                # if request.form['password'] == pw:
-                return render_template('index.html', user_name=user_name)
+    # author=request.form['user_id']
+    # cursor.execute('select user_name from film.user')
+    # user_names = cursor.fetchall()
+    #
+    # for user in user_names:
+    #     if request.form['user_name'] == user[0]:
+    #         sql_pw = 'select user_password from film.user where user_name' + '=' + '%s'
+    #         cursor.execute(sql_pw, (user[0]))
+    #
+    #         pw = cursor.fetchall()
+    #
+    #         if request.form['password'] == pw[0][0]:
+    #             # if request.form['password'] == pw:
+    #             return render_template('index.html', user_name=user_name)
 
             return '<h>账号密码错误！</h>'
 
