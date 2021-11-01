@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comment</title>
+    <link rel="stylesheet" href="../static/css/comment.css">
+</head>
+<body>
+    {% include 'base.html' %}
+    <img class="c_w comment_pic" src="../static/images/3783958/lalaland_com.jpeg" alt="" >
+    <div class="comment_w c_w">
+        <form method="post">
+            <label>User:
+            </label><input type="password" name="user"><br>
+            <label>IMDB:
+            </label><input type="password" name="IMDB"><br>
+            <label>Comment_ID:
+            </label><input type="password" name="Comment_ID"><br>
+            <label>Time:
+            </label><input type="password" name="Time"><br>
+            <label>Comment:</label>
+            <textarea rows="5" cols="30" name="Comment"></textarea><br>
+            <input type="submit" value="提交"><br>
+        </form>
+    </div>
+
+
+</body>

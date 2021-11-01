@@ -11,17 +11,13 @@
 
 <body>
     <div class="header w">
-        <div class="logo">
-            <img src="images/logo.png" alt="">
-        </div>
-
         <div class="nav">
             <ul>
+                <li><a href="/">Index</a></li>
                 {% if user_name %}
                 {% else %}
                     <li><a href="/login">Sign in</a></li>
                 {% endif %}
-
             </ul>
         </div>
 
@@ -33,7 +29,6 @@
         </div>
 
         <div class="user">
-            <img src="images/user.png" alt="">
             {{ user_name }}
         </div>
     </div>

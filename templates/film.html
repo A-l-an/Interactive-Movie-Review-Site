@@ -5,17 +5,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMDB都不理</title>
+    <title>我想睡觉啊啊啊啊啊</title>
     <link rel="stylesheet" href="../static/css/film.css">
 </head>
 <body>
     {% include 'base.html' %}
-    <div class="mainbody">
-        <h1 class="title w">
-        Hello {{ film_name_en }}!
-        </h1>
+    <div class="mainbody f_w">
+        <h1 class="title f_w">
         {{ film_name_en }}
-        {{ film_imdb }}
-        <img src="../static/images/La%20La%20Land.JPG" alt="" class="poster">
+        </h1>
+        <div class="f_w maininfo">
+            <img src="../static/images/3783958/La%20La%20Land.JPG" alt="" class="poster">
+            <div class="sidebar">
+                <div class="description">
+                    <h1>Filmfest</h1>
+                    <ul>
+                        <li><a href="">84th Oscars <span>></span></a></li>
+                        <li><a href="">BAFTA Awards <span>></span></a></li>
+                        <li><a href="">Screen Actors Guild Awards <span>></span></a></li>
+                        <li><a href="">AACTA International Awards <span>></span></a></li>
+                    </ul>
+                </div>
+                <div class="description">
+                    <h1>Storyline</h1>
+                    <p>{{ description }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="hd">
+            <h1>Cast</h1>
+            <a href="#">more ></a>
+        </div>
+        <div class="cast-bd">
+                <div class="name">
+                    {% for person_name in person_names %}
+                        <a href="">{{ person_name }}</a>
+                    {% endfor %}
+                </div>
+                <div class="casttype">
+                    {% for cast_type in cast_types %}
+                    <p>{{ cast_type }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+        <div class="comment hd">
+            <h1>Comment</h1>
+            <a href="/comment/new" class="add">+</a>
+        </div>
+        <div class="comment-bd">
+            <img class="f_w comment_pic" src="../static/images/3783958/lalaland_com.jpeg" alt="" >
+            <a href="/comment/asdakbdjaksssknd" class="time">Time:&nbsp;{{ comment_time }}</a>
+            <p>
+                <span>“</span>&nbsp;&nbsp;&nbsp;{{ comment_content }}
+            </p>
+            <p class="status">
+                <span class="author">From:&nbsp;<a href="">{{ user_id }}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <a href="/comment/asdakbdjaksssknd" class="icon agree" type="submit">&#xf087</a>&nbsp;<span class="separator">·</span>&nbsp;<span class="agree_number">1992</span>
+            </p>
+
+        </div>
     </div>
 </body>

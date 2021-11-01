@@ -1,10 +1,24 @@
+@font-face {
+    font-family: 'FontAwesome';
+     src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+     src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+     font-weight: normal;
+     font-style: normal;
+   }
+
+.icon{
+   font-family: FontAwesome;
+   font-size: 25px;
+}
+
+
 * {
     margin:  0;
     padding: 0;
 }
 /* 版心 */
-.w {
-    width: 1200px;
+.f_w {
+    width: 1000px;
     margin: auto;
 }
 
@@ -31,15 +45,251 @@ a {
     text-decoration: none;
 }
 
+.mainbody {
+    margin-bottom: 10px;
+    height: 2000px;
+    background-color: black;
+}
+
+.maininfo {
+    margin-bottom: 30px;
+    height: 430px;
+}
+
 .poster {
+    display: block;
+    float: left;
     height: 420px;
 }
 
-.title {
+.sidebar {
+    float: left;
+    /*margin: 0 10px 0 20px;*/
+    margin-left: 92px;
+    width: 600px;
     color: white;
 }
 
-.mainbody {
-    height: 2000px;
-    background-color: #181818;
+.title {
+    padding: 30px 0 15px 0px;
+    font-size: 50px;
+    font-weight: 500;
+    color: white;
+}
+
+.sidebar .description {
+    display: block;
+    margin: 10px 10px 40px 10px;
+    line-height: 25px;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+.sidebar .description h1{
+    margin-bottom: 20px;;
+    color: #eec548;
+    font-size: 35px;
+    font-weight: 520;
+}
+
+.cast {
+    height: 500px;
+}
+
+.description ul li {
+    /*display: block;*/
+    height: 35px;
+    width: 350px;
+    line-height: 35px;
+    padding: 0 0 0 14px;
+}
+
+.description ul li a{
+    color: white;
+}
+
+.description ul li span{
+    float: right;
+    padding-right: 5px;
+}
+
+.description ul li:hover{
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 20px;
+}
+
+.description p {
+    padding: 0 0 0 14px;
+}
+
+.comment {
+    margin-top: 70px;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+.comment h1 {
+    color: #eec548;
+}
+
+.mainbody .hd {
+    margin-top: 70px;
+    height: 70px;
+}
+
+.mainbody .name{
+    float: left;
+}
+
+.mainbody .casttype{
+    float: left;
+    padding-left: 30px;
+}
+
+.hd h1{
+    float: left;
+    padding-bottom: 20px;
+    font-size: 43px;
+    font-family: Arial;
+    color: #eec548;
+}
+
+.hd a{
+    display: block;
+    float: right;
+    margin: 28px 30px 0 0;
+    padding: 4px 8px;
+    font-family: Arial;
+    font-size: 17px;
+    color: #6599e8;
+}
+
+.hd .add{
+    display: block;
+    float: right;
+    margin: 0 0 0 0;
+    padding: 10px;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    line-height: 35px;
+    font-family: Arial;
+    font-size: 35px;
+    color: #6599e8;
+}
+
+.hd .add:hover{
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 35px;
+}
+
+.hd a:hover{
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 20px;
+}
+
+.mainbody .cast-bd{
+    margin-top: 7px;
+    margin-bottom: 10px;
+    height: 100px;
+}
+
+.mainbody .cast-bd p{
+    padding-top: 7px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-family: Arial;
+    color: #4e4e4e;
+}
+
+.mainbody .cast-bd a{
+    display: block;
+    padding-bottom: 8px;
+    font-size: 25px;
+    font-family: Arial;
+    color: white;
+}
+
+.mainbody .cast-bd a:hover{
+    color: #6599e8;
+}
+
+.comment_pic {
+    margin-top: 10px;
+}
+
+.comment-bd p{
+    margin-top: 30px;
+    font-size: 24px;
+    font-family: Arial;
+    color: white;
+}
+
+.comment-bd p span{
+    font-size: 60px;
+}
+
+.comment-bd span {
+    color: white;
+}
+
+.comment-bd .time {
+    display: block;
+    float: right;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Arial;
+    font-weight: bold;
+    color: white;
+}
+
+.comment-bd .time:hover {
+    color: #eec548;
+}
+
+.comment-bd .status {
+    display: block;
+    float: right;
+    margin-top: 0px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.comment-bd .author{
+    font-size: 16px;
+}
+
+.comment-bd .author a{
+
+    color: #6599e8;
+}
+
+.agree {
+    padding: 12px;
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: #757575;
+}
+
+.agree:hover{
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 20px;
+}
+
+.agree:visited{
+    color: #eec548;
+}
+
+.comment-bd .status .separator {
+    font-size: 20px;
+    font-weight: 800;
+    color: #757575;
+}
+
+.comment-bd .status .agree_number{
+    font-size: 16px;
 }

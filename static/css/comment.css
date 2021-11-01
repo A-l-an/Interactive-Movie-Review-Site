@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'FontAwesome';
+     src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+     src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+     font-weight: normal;
+     font-style: normal;
+   }
+
+.icon{
+   font-family: FontAwesome;
+   font-size: 25px;
+}
+
+
+* {
+    margin:  0;
+    padding: 0;
+}
+/* 版心 */
+.c_w {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table;
+  }
+  .clearfix:after {
+    clear:both;
+  }
+  .clearfix {
+     *zoom:1;
+  }
+
+body {
+    background-color: black;
+}
+
+form {
+    color: white;
+}
+
+.comment_pic {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.comment_w{
+    padding-left: 500px;;
+}
+
+.comment_w label{
+    display: block;
+}
