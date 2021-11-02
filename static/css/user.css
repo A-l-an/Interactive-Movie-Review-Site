@@ -46,3 +46,79 @@ body {
 .comment_w h2{
     color: white;
 }
+
+.comment-bd {
+    color: white;
+    font-size: 20px;
+}
+
+.comment-bd p{
+    margin-top: 55px;
+    padding-top: 40px;
+    font-size: 24px;
+    font-family: Arial;
+    color: white;
+}
+
+.comment-bd p span{
+    font-size: 75px;
+}
+
+.comment-bd span {
+    color: white;
+}
+
+.comment-bd .status {
+    display: block;
+    float: right;
+    margin-top: 0px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.comment-bd .author{
+    font-size: 16px;
+}
+
+.comment-bd .author a{
+    color: #6599e8;
+}
+
+.content{
+    margin-bottom: 28px;
+}
+
+.comment-bd .status {
+    display: block;
+    float: right;
+    margin-top: 0px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.agree {
+    padding: 12px;
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: #757575;
+}
+
+.agree:hover{
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 20px;
+}
+
+.comment_w{
+    padding-left: 500px;
+    color: white;
+}
+
+input {
+    font-size: 20px;
+}
+
+.like_name {
+    padding: 50px 0 0 450px;
+}

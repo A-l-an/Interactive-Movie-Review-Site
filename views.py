@@ -44,13 +44,13 @@ def comment():
     return comment_data
 
 
-@app.route("/comment/asdakbdjaksssknd", methods=["GET", "POST"])
+@app.route("/comment/asdakbdjakssskn", methods=["GET", "POST"])
 def comments():
     comments_data = logic.get_comments()
     return comments_data
 
 
-@app.route("/comment/asddesknd", methods=["GET", "POST"])
+@app.route("/comment/asddeskn", methods=["GET", "POST"])
 def likes():
     likes_data = logic.get_likes()
     return likes_data
@@ -62,10 +62,10 @@ def user():
     return user_data
 
 
-@app.route("/like", methods=["GET", "POST"])
-def like():
-    like_data = logic.get_like()
-    return like_data
+@app.route("/follow", methods=["GET", "POST"])
+def follow():
+    follow_data = logic.get_follow()
+    return follow_data
 
 
 @app.route("/logout", methods=["GET", "POST"])

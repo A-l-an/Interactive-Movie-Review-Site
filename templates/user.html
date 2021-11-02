@@ -9,11 +9,23 @@
     <link rel="stylesheet" href="../static/css/user.css">
 </head>
 <body>
+{#为了方便直接引用的事comment的结构#}
     {% include 'base.html' %}
-    <div class="comment_w c_w">
-        <h1>{{ person }}</h1>
-        <h2>fans:{{ person_fans }}</h2>
+    <div class="comment-bd c_w">
+        {% for person_info in person_infos %}
+            <div class="content">
+                    <p>{{ person_info[0] }}</p>
+            </div>
+            <div class="status">
+{#                <span class="author">#}
+{#                    {{ film_comment[6] }}#}
+{#                </span>#}
+                <a href="/follow" class="icon agree" type="submit">&#xf234</a>&nbsp;
+                <span class="separator">·</span>&nbsp;
+                <span class="agree_number">
+                    {{ person_info[2] }}
+                </span>
+            </div>
+        {% endfor %}
     </div>
-    <hr>
-    <a href="/like">关注</a>
 </body>

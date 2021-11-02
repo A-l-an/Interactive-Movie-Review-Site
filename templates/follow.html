@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>follow</title>
-    <link rel="stylesheet" href="../static/css/comment.css">
+    <link rel="stylesheet" href="../static/css/user.css">
 </head>
 <body>
      {% include 'base.html' %}
-    <h1 class="c_w title">请输入关注的用户的ID</h1>
-    <div class="comment_w c_w">
+     <div class="comment_w">
+        <h1 class="c_w title">请输入关注的用户的ID</h1>
+    </div>
+    <div class="comment-bd c_w like_name">
         <form method="post">
             <label>Like_User_name:
             </label><input type="text" name="username"><br>

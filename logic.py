@@ -62,7 +62,7 @@ def get_register():
 def get_film():
     # film_name_ch = request.form['search_film']
     film_name_ch = session.get('filmname')
-    # 取电影信息 #
+######### 取电影信息 #########
     sql_film_name = 'select * from film.film where film_name_ch' + '=' + '%s'
     cursor.execute(sql_film_name, [film_name_ch])
     film_infos = cursor.fetchall()
@@ -80,7 +80,7 @@ def get_film():
     cast_types = [film_cast[2] for film_cast in film_casts]
     person_names = [film_cast[3] for film_cast in film_casts]
 
-    # 取精选评论 #
+###### 取精选评论 #########
     sql_film_comment_good = 'select * from film.comment where imdb' + '=' + '%s'
     cursor.execute(sql_film_comment_good, [film_imdb])
 
@@ -92,12 +92,17 @@ def get_film():
 
     session['film_imdb_now'] = film_imdb
     user_name = session.get('username')
+
+######## 原声带 ########
+    sql_music_all = 'select * from film.music where imdb' + '=' + '%s'
+    cursor.execute(sql_music_all, [film_imdb])
+    music_all = cursor.fetchall()  # 这是字典
     if film_imdb:
         # get_cast(film_imdb)
         return render_template('film.html', film_imdb=film_imdb, film_name_en=film_name_en, description=description,
                                cast_types=cast_types, person_names=person_names, user_name=user_name,
                                author=author, comment_content=comment_content, film_time=film_time,
-                               comment_like=comment_like)
+                               comment_like=comment_like, music_all=music_all)
 
 
 def get_imdb(film_name_ch):
@@ -185,7 +190,7 @@ def get_delete():
             try:
                 cursor.execute(sql_delete, delete_comment_ID)
                 conn.commit()
-                return redirect('/comment/asdakbdjaksssknd')
+                return redirect('/comment/asdakbdjakssskn')
             except Exception as e:
                 conn.rollback()
                 return '<h>不可操作！</h>'
@@ -212,7 +217,7 @@ def get_update():
             try:
                 cursor.execute(sql_update, [comment_content_new, update_comment_ID])
                 conn.commit()
-                return redirect('/comment/asdakbdjaksssknd')
+                return redirect('/comment/asdakbdjakssskn')
             except Exception as e:
                 conn.rollback()
                 return '<h>不可操作！</h>'
@@ -237,20 +242,23 @@ def get_likes():
             comment_like_old = comment_info[5]
             comment_like_new = comment_like_old + 1
 
+        insert_like(update_comment_ID, my_name)
         # 更新操作
         sql_update = "update film.comment set comment_like = %s where comment_id = %s"
 
         try:
             cursor.execute(sql_update, [comment_like_new, update_comment_ID])
             conn.commit()
-            return redirect('/comment/asdakbdjaksssknd')
+            return redirect('/comment/asdakbdjakssskn')
         except Exception as e:
             conn.rollback()
             return '<h>不可操作！</h>'
 
 
 def get_filmfest():
-    # 还没改（和数据库有关）
+    user_name = session.get('username')
+    return render_template('filmfest.html', user_name=user_name)
+    # （和数据库有关）
     # film_name_ch = request.form['search_film']
     # sql_film_name = 'select * from film.film where film_name_ch' + '=' + '%s'
     # cursor.execute(sql_film_name, [film_name_ch])
@@ -276,25 +284,20 @@ def get_filmfest():
     #     return render_template('film.html', film_imdb=film_imdb, film_name_en=film_name_en,
     #                            description=description, cast_types=cast_types, person_names=person_names,
     #                            user_name=user_name)
-    return render_template('filmfest.html')
 
 
 def show_user():
     if request.method == 'GET':
         user_name = session.get('username')
-        person = request.a['film_comment[2]']
         # 取电影信息 #
-        sql_person = 'select * from film.user where user_name' + '=' + '%s'
-        cursor.execute(sql_person, [person])
+        sql_person = 'select * from film.user '
+        cursor.execute(sql_person)
         person_infos = cursor.fetchall()
 
-        for person_info in person_infos:
-            person_fans = person_info[0]
-
-        return render_template('user.html', person_fans=person_fans, person=person)
+        return render_template('user.html', person_infos=person_infos, user_name=user_name)
 
 
-def get_like():
+def get_follow():
     if request.method == 'GET':
         user_name = session.get('username')
         return render_template('follow.html', user_name=user_name)
@@ -309,6 +312,7 @@ def get_like():
             fans_old = user_info[2]
             fans_new = fans_old + 1
 
+        insert_follow(my_name, author)
         # 更新操作
         sql_update_fans = "update film.user set user_fans = %s where user_name = %s"
 
@@ -320,14 +324,32 @@ def get_like():
             conn.rollback()
             return '<h>不可操作！</h>'
 
-    return '<h>账号密码错误！</h>'
-
 
 # 插入操作
 def insert_user(user_name, user_password):
     sql_insert_user = 'insert into film.user values(' + '%s' + ', %s' + ', %s' ')'
     try:
         cursor.execute(sql_insert_user, [user_name, user_password, '0'])
+        # 提交
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+
+
+def insert_like(comment_id, my_name):
+    sql_insert_like = 'insert into film.comment_alternation values(' + '%s' + ', %b' + ', %s' ')'
+    try:
+        cursor.execute(sql_insert_like, [my_name, comment_id, bool(1)])
+        # 提交
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+
+
+def insert_follow(my_name, user_name):
+    sql_insert_follow = 'insert into film.user_alternation values(' + '%s' + ', %s' + ', %s' ')'
+    try:
+        cursor.execute(sql_insert_follow, [my_name, user_name, '1'])
         # 提交
         conn.commit()
     except Exception as e:
