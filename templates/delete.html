@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>delete</title>
+    <link rel="stylesheet" href="../static/css/modification.css">
+</head>
+<body>
+     {% include 'base.html' %}
+    <h1 class="c_w title">请输入删除的评论ID</h1>
+    <div class="comment_w c_w">
+        <form method="post">
+            <label>Delete_Comment_ID:
+            </label><input type="text" name="Comment_ID"><br>
+            {% if user_name %}
+            <input type="submit" value="提交"><br>
+            {% else %}
+            <h1>请先登陆！</h1>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>

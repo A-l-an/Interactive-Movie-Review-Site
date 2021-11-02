@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>register</title>
+    <link rel="stylesheet" href="../static/css/login.css">
 </head>
 <body>
-<form method="post">
-    <label>用户名:</label><input type="text" name="username"><br>
-    <label>密码:</label><input type="password" name="password"><br>
-    <input type="submit" value="提交"><br>
-</form>
-
+    {% include 'base.html' %}
+    <h1>请注册</h1>
+    <form method="post" class="w login">
+        <label>您的用户名:</label><input type="text" name="username"><br>
+        <label>您的密码:</label><input type="password" name="password"><br>
+        <br>
+        <input type="submit" value="注册" class="submitinfo"><br>
+    </form>
 <hr>
 
 </body>

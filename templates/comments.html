@@ -13,18 +13,49 @@
     <img class="c_w comment_pic" src="../static/images/3783958/lalaland_com.jpeg" alt="" >
     <div class="comment_w c_w">
         <form method="post">
-            <label>User:
-            </label><input type="password" name="user"><br>
-            <label>IMDB:
-            </label><input type="password" name="IMDB"><br>
             <label>Comment_ID:
-            </label><input type="password" name="Comment_ID"><br>
+            </label><input type="text" name="Comment_ID"><br>
             <label>Time:
-            </label><input type="password" name="Time"><br>
+            </label><input type="text" name="Time"><br>
             <label>Comment:</label>
             <textarea rows="5" cols="30" name="Comment"></textarea><br>
+            {% if user_name %}
             <input type="submit" value="提交"><br>
+            {% else %}
+            <h1>请先登陆！</h1>
+            {% endif %}
         </form>
+    </div>
+    <div class="comment-bd c_w">
+        {% for film_comment in film_comments %}
+            <div class="modification c_w">
+                {% if user_name == film_comment[2] %}
+                    <a href="/delete"><span class="icon delete ">&#xf014</span></a>
+                    <a href="/update"><span class="icon update ">&#xf040</span></a>
+                {% elif user_name == 'sudo'%}
+                    <a href="/delete"><span class="icon delete ">&#xf014</span></a>
+                    <a href="/update"><span class="icon update ">&#xf040</span></a>
+                {% endif %}
+            </div>
+            <div class="content">
+                    <p>"{{ film_comment[3] }}"</p>
+            </div>
+            <div class="status">
+                <span class="agree_number">
+                    {{ film_comment[6] }}
+                </span>
+                <span class="author">
+                        From:&nbsp;<a href="/user" methods="post">{{ film_comment[2] }}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+
+                <a href="/comment/asddesknd" class="icon agree" type="submit">&#xf087</a>&nbsp;
+                <span class="separator">·</span>&nbsp;
+                <span class="agree_number">
+                    {{ film_comment[5] }}
+                </span>
+            </div>
+        {% endfor %}
+
     </div>
 
 

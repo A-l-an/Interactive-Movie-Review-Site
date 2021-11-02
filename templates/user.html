@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user</title>
+    <link rel="stylesheet" href="../static/css/user.css">
+</head>
+<body>
+    {% include 'base.html' %}
+    <div class="comment_w c_w">
+        <h1>{{ person }}</h1>
+        <h2>fans:{{ person_fans }}</h2>
+    </div>
+    <hr>
+    <a href="/like">关注</a>
+</body>

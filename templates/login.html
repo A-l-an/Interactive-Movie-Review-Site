@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>login</title>
-
+    <link rel="stylesheet" href="../static/css/login.css">
 </head>
 <body>
 {% include 'base.html' %}
-<form method="post">
+<h1>请登陆</h1>
+<form method="post" class="w login">
     <label>用户名:</label><input type="text" name="user_name"><br>
     <label>密码:</label><input type="password" name="password"><br>
-    <input type="submit" value="提交"><br>
+    <br>
+    <input type="submit" value="提交" class="submitinfo"><br>
 {#    {% for message in get_flashed_messages() %}#}
 {#        {{ message }}#}
 {#    {% endfor %}#}
-    <h1> {{ person_name }} </h1>
 </form>
 
 <hr>
 
-<p><a href="{{ url_for('register') }}">注册</a></p>
+<p><a href="{{ url_for('register') }}" class="w">注册</a></p>
 {#<form method="post">#}
 {#    {{ form.csrf_token() }}#}
 {#    {{ form.username.label }}{{ form.username }}<br>#}

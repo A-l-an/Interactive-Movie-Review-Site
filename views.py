@@ -1,7 +1,7 @@
 # 接口逻辑单元 #
 
 
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, session, redirect
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, EqualTo
@@ -50,15 +50,46 @@ def comments():
     return comments_data
 
 
-@app.route("/comment/asdakbdjaksssknd", methods=["GET", "POST"])
+@app.route("/comment/asddesknd", methods=["GET", "POST"])
 def likes():
     likes_data = logic.get_likes()
     return likes_data
 
+
 @app.route("/user", methods=["GET", "POST"])
 def user():
-    user_data = logic.get_user()
+    user_data = logic.show_user()
     return user_data
+
+
+@app.route("/like", methods=["GET", "POST"])
+def like():
+    like_data = logic.get_like()
+    return like_data
+
+
+@app.route("/logout", methods=["GET", "POST"])
+def logout():
+    session['username'] = False
+    return redirect('/')
+
+
+@app.route("/delete", methods=["GET", "POST"])
+def delete():
+    delete_data = logic.get_delete()
+    return delete_data
+
+
+@app.route("/update", methods=["GET", "POST"])
+def update():
+    update_data = logic.get_update()
+    return update_data
+
+
+@app.route("/filmfest", methods=["GET", "POST"])
+def filmfest():
+    filmfest_data = logic.get_filmfest()
+    return filmfest_data
 
 # 查询操作
 # sql = "SELECT * FROM Cast"

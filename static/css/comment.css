@@ -43,7 +43,7 @@ form {
 
 .comment_pic {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
 .comment_w{
@@ -52,4 +52,115 @@ form {
 
 .comment_w label{
     display: block;
+}
+
+label {
+    font-size: 20px;
+}
+
+input {
+    font-size: 18px;
+}
+
+.comment-bd {
+    color: white;
+}
+
+.comment-bd p{
+    margin-top: 55px;
+    padding-top: 40px;
+    font-size: 24px;
+    font-family: Arial;
+    color: white;
+}
+
+.comment-bd p span{
+    font-size: 75px;
+}
+
+.comment-bd span {
+    color: white;
+}
+
+.comment-bd .status {
+    display: block;
+    float: right;
+    margin-top: 0px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.comment-bd .author{
+    font-size: 16px;
+}
+
+.comment-bd .author a{
+    color: #6599e8;
+}
+
+.time {
+    float: right;
+    margin-right: 127px;
+    color: white;
+}
+
+form{
+    margin: 45px 0;
+}
+
+.author{
+    padding-left: 20px;
+    font-size: 16px;
+}
+
+.author a{
+    color: #6599e8;
+}
+
+.content{
+    margin-bottom: 28px;
+}
+
+
+.agree {
+    padding: 12px;
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: #757575;
+}
+
+.agree:hover{
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 20px;
+}
+
+.agree:visited{
+    color: #eec548;
+}
+
+/*p{*/
+/*    display: block;*/
+/*}*/
+
+.delete {
+    float: right;
+    display: block;
+    padding: 10px;
+}
+
+.update {
+    float: right;
+    display: block;
+    padding: 10px;
+}
+
+.modification {
+    margin-top: 82px;
+}
+
+.modification a span:hover{
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 35px;
 }
